@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Records - View, edit and delete registered students." />
+  <title>Student Records | Student Registration System</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ==============================
+       HEADER / NAVBAR
+  ============================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="header-brand">
+        <h1 class="site-title">🎓 Student Registration System</h1>
+        <p class="site-subtitle">Register · Manage · Track</p>
+      </div>
+
+      <!-- Hamburger menu -->
+      <div class="menu-wrapper" id="menuWrapper">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="dropdown-menu" id="dropdownMenu" role="navigation" aria-label="Main navigation">
+          <a href="index.html" class="menu-link">🏠 Home</a>
+          <a href="records.html" class="menu-link active">📋 Student Records</a>
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==============================
+       RECORDS PAGE CONTENT
+  ============================== -->
+  <main class="records-page">
+
+    <!-- A small note under the heading for context -->
+    <div class="records-top">
+      <h2 class="page-heading">📋 Student Records</h2>
+      <!-- Live count badge -->
+      <span class="count-badge" id="recordCount">0 students</span>
+    </div>
+
+    <!-- Scrollable table container
+         (max-height and overflow-y set dynamically by JS) -->
+    <div id="tableWrapper" class="table-wrapper">
+
+      <!-- Records table -->
+      <table id="recordsTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Email</th>
+            <th>Contact No.</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <!-- Rows inserted by JavaScript -->
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <!-- Empty state: shown when no records exist -->
+      <div id="emptyState" class="empty-state">
+        <p>📭 No students registered yet.</p>
+        <a href="index.html" class="go-home-btn">Go to Registration →</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!--JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

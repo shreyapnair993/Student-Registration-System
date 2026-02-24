@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Registration System - Register and manage student records." />
+  <title>Student Registration System</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ==============================
+       HEADER / NAVBAR
+  ============================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand title on the left -->
+      <div class="header-brand">
+        <h1 class="site-title">🎓 Student Registration System</h1>
+        <p class="site-subtitle">Register · Manage · Track</p>
+      </div>
+
+      <!-- Hamburger menu wrapper on the right -->
+      <div class="menu-wrapper" id="menuWrapper">
+
+        <!-- Three-line hamburger button -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Dropdown menu: slides in on hover/click -->
+        <nav class="dropdown-menu" id="dropdownMenu" role="navigation" aria-label="Main navigation">
+          <a href="index.html" class="menu-link active">🏠 Home</a>
+          <a href="records.html" class="menu-link">📋 Student Records</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================
+       MAIN LAYOUT
+  ============================== -->
+  <main class="main-layout">
+
+    <!-- LEFT PANEL: Logo box -->
+    <aside class="logo-panel" aria-label="System Logo">
+      <div class="logo-box">
+        <img src="logo.png" alt="Student Registration System Logo" class="logo-img" />
+        <p class="logo-caption">Your Academic Hub</p>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANEL: Registration Form box -->
+    <section class="form-panel" aria-label="Student Registration Form">
+      <h2 class="form-heading">Register a Student</h2>
+      <p class="form-note">Fill in the details below to add a new student record.</p>
+
+      <form id="registrationForm" novalidate>
+
+        <!-- Student Name field -->
+        <div class="form-group">
+          <label for="studentName">Student Name <span class="req">*</span></label>
+          <input type="text" id="studentName" placeholder="e.g. John Doe" autocomplete="off" />
+          <span class="err" id="nameError"></span>
+        </div>
+
+        <!-- Student ID field -->
+        <div class="form-group">
+          <label for="studentId">Student ID <span class="req">*</span></label>
+          <input type="text" id="studentId" placeholder="e.g. 10234" autocomplete="off" />
+          <span class="err" id="idError"></span>
+        </div>
+
+        <!-- Email ID field -->
+        <div class="form-group">
+          <label for="emailId">Email ID <span class="req">*</span></label>
+          <input type="email" id="emailId" placeholder="e.g. john@school.com" autocomplete="off" />
+          <span class="err" id="emailError"></span>
+        </div>
+
+        <!-- Contact Number field -->
+        <div class="form-group">
+          <label for="contactNo">Contact Number <span class="req">*</span></label>
+          <input type="text" id="contactNo" placeholder="e.g. 9876543210" autocomplete="off" maxlength="15" />
+          <span class="err" id="contactError"></span>
+        </div>
+
+        <!-- RESET and ADD buttons side by side (as per wireframe) -->
+        <div class="btn-row">
+          <button type="button" id="resetBtn" class="btn btn-reset">↺ Reset</button>
+          <button type="submit" id="submitBtn" class="btn btn-add">+ Add</button>
+        </div>
+
+        <!-- Cancel button: only visible when editing an existing record -->
+        <button type="button" id="cancelBtn" class="btn btn-cancel" style="display:none;">
+          ✕ Cancel Edit
+        </button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!--JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
